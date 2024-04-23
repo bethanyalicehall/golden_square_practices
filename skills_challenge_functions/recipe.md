@@ -1,29 +1,28 @@
 
-
+One
 ## 1. Describe the Problem
-
 _Put or write the user story here. Add any clarifying notes you might have._
 
+As a user
+So that I can manage my time
+I want to see an estimate of reading time for a text, assuming that I can read 200 words a minute.
+
 ## 2. Design the Function Signature
-
 _Include the name of the function, its parameters, return value, and side effects._
-
 ```python
-# EXAMPLE
+def calculates_reading_time_of_text(text):
+    '''Calculates reading time of a text
 
-def extract_uppercase(mixed_words):
-    """Extracts uppercase words from a string
+    Parameters:
+        text: a string containing words
+    
+    Returns:
+        the average reading time for a text, as a float to one decimal place
 
-    Parameters: (list all parameters and their types)
-        mixed_words: a string containing words (e.g. "hello WORLD")
-
-    Returns: (state the return value and its type)
-        a list of strings, each one a word (e.g. ["WORLD"])
-
-    Side effects: (state any side effects)
-        This function doesn't print anything or have any other side-effects
-    """
-    pass # Test-driving means _not_ writing any code here yet.
+    Side effects:
+        This function doesn't have any side effects
+    
+    '''
 ```
 
 ## 3. Create Examples as Tests
@@ -31,50 +30,27 @@ def extract_uppercase(mixed_words):
 _Make a list of examples of what the function will take and return._
 
 ```python
-# EXAMPLE
 
-"""
-Given a lower and an uppercase word
-It returns a list with the uppercase word
-"""
-extract_uppercase("hello WORLD") => ["WORLD"]
+'''
+Given a text message with 10 words
+It returns 3 seconds
+'''
 
-"""
-Given two uppercase words
-It returns a list with both words
-"""
-extract_uppercase("HELLO WORLD") => ["HELLO", "WORLD"]
-
-"""
-Given two lowercase words
-It returns an empty list
-"""
-extract_uppercase("hello world") => []
-
-"""
-Given a lower and a mixed case word
-It returns an empty list
-"""
-extract_uppercase("hello WoRLD") => []
-
-"""
-Given a lowercase word and an uppercase word with an exclamation mark
-It returns a list with the uppercase word, no exclamation mark
-"""
-extract_uppercase("hello WORLD!") => ["WORLD"]
+calculates_reading_time_of_text('One two three four five six seven eight nine ten') => "3 seconds"
 
 """
 Given an empty string
-It returns an empty list
+It returns none
 """
-extract_uppercase("") => []
+calculates_reading_time_of_text("") => "0 seconds"
 
 """
 Given a None value
 It throws an error
 """
-extract_uppercase(None) throws an error
+calculates_reading_time_of_text(None) throws an error
 ```
+
 
 _Encode each example as a test. You can add to the above list as you go._
 
@@ -82,20 +58,66 @@ _Encode each example as a test. You can add to the above list as you go._
 
 _After each test you write, follow the test-driving process of red, green, refactor to implement the behaviour._
 
-Here's an example for you to start with:
 
+--------------------------------------------------------------------------
+
+Two
+## 1. Describe the Problem
+_Put or write the user story here. Add any clarifying notes you might have._
+
+As a user
+So that I can manage my time
+I want to see an estimate of reading time for a text, assuming that I can read 200 words a minute.
+
+## 2. Design the Function Signature
+_Include the name of the function, its parameters, return value, and side effects._
 ```python
-# EXAMPLE
+def calculates_reading_time_of_text(text):
+    '''Calculates reading time of a text
 
-from lib.extract_uppercase import *
+    Parameters:
+        text: a string containing words
+    
+    Returns:
+        the average reading time for a text, as a float to one decimal place
 
-"""
-Given a lower and an uppercase word
-It returns a list with the uppercase word
-"""
-def test_extract_uppercase_with_upper_then_lower():
-    result = extract_uppercase("hello WORLD")
-    assert result == ["WORLD"]
+    Side effects:
+        This function doesn't have any side effects
+    
+    '''
 ```
 
-Ensure all test function names are unique, otherwise pytest will ignore them!
+## 3. Create Examples as Tests
+
+_Make a list of examples of what the function will take and return._
+
+```python
+
+'''
+Given a text message with 10 words
+It returns 3 seconds
+'''
+
+calculates_reading_time_of_text('One two three four five six seven eight nine ten') => "3 seconds"
+
+"""
+Given an empty string
+It returns none
+"""
+calculates_reading_time_of_text("") => "0 seconds"
+
+"""
+Given a None value
+It throws an error
+"""
+calculates_reading_time_of_text(None) throws an error
+```
+
+
+_Encode each example as a test. You can add to the above list as you go._
+
+## 4. Implement the Behaviour
+
+_After each test you write, follow the test-driving process of red, green, refactor to implement the behaviour._
+
+
